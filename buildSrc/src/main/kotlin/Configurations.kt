@@ -46,6 +46,12 @@ object Versions {
         const val core = "1.3.31"
         const val coroutines = "1.2.1"
     }
+
+    object AndroidX {
+        const val annotation = "1.1.0"
+    }
+
+    const val mockito = "2.28.2"
 }
 
 object Dependencies {
@@ -57,5 +63,15 @@ object Dependencies {
         const val classpath = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Kotlin.classpath}"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.Kotlin.core}"
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlin.coroutines}"
+        const val test = "org.jetbrains.kotlin:kotlin-test-junit:${Versions.Kotlin.core}"
+        const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Kotlin.coroutines}"
+    }
+
+    object AndroidX {
+        const val annotation = "androidx.annotation:annotation:${Versions.AndroidX.annotation}"
+    }
+
+    object Mockito {
+        const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     }
 }

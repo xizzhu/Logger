@@ -18,6 +18,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
 }
+apply("$rootDir/scripts/coverage.gradle.kts")
 
 android {
     compileOptions {
@@ -38,12 +39,16 @@ android {
 
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
+        getByName("test").java.srcDirs("src/test/kotlin")
     }
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             isShrinkResources = false
+        }
+        getByName("debug") {
+            isTestCoverageEnabled = project.hasProperty("coverage")
         }
     }
 
@@ -57,6 +62,11 @@ tasks.withType(Test::class.java) {
 }
 
 dependencies {
+    api(Dependencies.AndroidX.annotation)
     implementation(Dependencies.Kotlin.stdlib)
     implementation(Dependencies.Kotlin.coroutinesAndroid)
+
+    testImplementation(Dependencies.Kotlin.test)
+    testImplementation(Dependencies.Kotlin.coroutinesTest)
+    testImplementation(Dependencies.Mockito.mockito)
 }
