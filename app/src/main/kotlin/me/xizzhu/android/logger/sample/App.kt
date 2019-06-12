@@ -16,33 +16,16 @@
 
 package me.xizzhu.android.logger.sample
 
-import android.app.Activity
-import android.os.Bundle
+import android.app.Application
 import me.xizzhu.android.logger.Log
+import me.xizzhu.android.logger.LogcatLogger
 
-class MainActivity : Activity() {
-    companion object {
-        private val TAG = MainActivity::class.java.simpleName
-    }
+class App : Application() {
+    override fun onCreate() {
+        super.onCreate()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.i(TAG, "onCreate")
-        setContentView(R.layout.activity_main)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i(TAG, "onStart")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.i(TAG, "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.i(TAG, "onDestroy")
+        if (BuildConfig.DEBUG) {
+            Log.addLogger(LogcatLogger())
+        }
     }
 }

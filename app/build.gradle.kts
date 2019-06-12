@@ -52,6 +52,8 @@ tasks.withType(Test::class.java) {
 }
 
 dependencies {
+    implementation(project(":lib"))
+
     implementation(Dependencies.Kotlin.stdlib)
     implementation(Dependencies.Kotlin.coroutinesAndroid)
 }
