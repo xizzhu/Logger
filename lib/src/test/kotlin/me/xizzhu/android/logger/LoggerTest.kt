@@ -39,54 +39,54 @@ class LoggerTest {
     fun testNoLogger() {
         Log.v(tag, msg)
         verify(logger, never()).log(Log.VERBOSE, tag, msg)
-        verify(logger, never()).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, never()).log(Log.VERBOSE, tag, msg, exception)
 
         Log.d(tag, msg)
         verify(logger, never()).log(Log.DEBUG, tag, msg)
-        verify(logger, never()).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, never()).log(Log.DEBUG, tag, msg, exception)
 
         Log.i(tag, msg)
         verify(logger, never()).log(Log.INFO, tag, msg)
-        verify(logger, never()).log(Log.INFO, tag, exception, msg)
+        verify(logger, never()).log(Log.INFO, tag, msg, exception)
 
         Log.w(tag, msg)
         verify(logger, never()).log(Log.WARN, tag, msg)
-        verify(logger, never()).log(Log.WARN, tag, exception, msg)
+        verify(logger, never()).log(Log.WARN, tag, msg, exception)
 
         Log.e(tag, msg)
         verify(logger, never()).log(Log.ERROR, tag, msg)
-        verify(logger, never()).log(Log.ERROR, tag, exception, msg)
+        verify(logger, never()).log(Log.ERROR, tag, msg, exception)
 
         Log.f(tag, msg)
         verify(logger, never()).log(Log.FATAL, tag, msg)
-        verify(logger, never()).log(Log.FATAL, tag, exception, msg)
+        verify(logger, never()).log(Log.FATAL, tag, msg, exception)
     }
 
     @Test
     fun testNoLoggerWithException() {
-        Log.v(tag, exception, msg)
+        Log.v(tag, msg, exception)
         verify(logger, never()).log(Log.VERBOSE, tag, msg)
-        verify(logger, never()).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, never()).log(Log.VERBOSE, tag, msg, exception)
 
-        Log.d(tag, exception, msg)
+        Log.d(tag, msg, exception)
         verify(logger, never()).log(Log.DEBUG, tag, msg)
-        verify(logger, never()).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, never()).log(Log.DEBUG, tag, msg, exception)
 
-        Log.i(tag, exception, msg)
+        Log.i(tag, msg, exception)
         verify(logger, never()).log(Log.INFO, tag, msg)
-        verify(logger, never()).log(Log.INFO, tag, exception, msg)
+        verify(logger, never()).log(Log.INFO, tag, msg, exception)
 
-        Log.w(tag, exception, msg)
+        Log.w(tag, msg, exception)
         verify(logger, never()).log(Log.WARN, tag, msg)
-        verify(logger, never()).log(Log.WARN, tag, exception, msg)
+        verify(logger, never()).log(Log.WARN, tag, msg, exception)
 
-        Log.e(tag, exception, msg)
+        Log.e(tag, msg, exception)
         verify(logger, never()).log(Log.ERROR, tag, msg)
-        verify(logger, never()).log(Log.ERROR, tag, exception, msg)
+        verify(logger, never()).log(Log.ERROR, tag, msg, exception)
 
-        Log.f(tag, exception, msg)
+        Log.f(tag, msg, exception)
         verify(logger, never()).log(Log.FATAL, tag, msg)
-        verify(logger, never()).log(Log.FATAL, tag, exception, msg)
+        verify(logger, never()).log(Log.FATAL, tag, msg, exception)
     }
 
     @Test
@@ -96,27 +96,27 @@ class LoggerTest {
 
         Log.v(tag, msg)
         verify(logger, never()).log(Log.VERBOSE, tag, msg)
-        verify(logger, never()).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, never()).log(Log.VERBOSE, tag, msg, exception)
 
         Log.d(tag, msg)
         verify(logger, never()).log(Log.DEBUG, tag, msg)
-        verify(logger, never()).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, never()).log(Log.DEBUG, tag, msg, exception)
 
         Log.i(tag, msg)
         verify(logger, never()).log(Log.INFO, tag, msg)
-        verify(logger, never()).log(Log.INFO, tag, exception, msg)
+        verify(logger, never()).log(Log.INFO, tag, msg, exception)
 
         Log.w(tag, msg)
         verify(logger, never()).log(Log.WARN, tag, msg)
-        verify(logger, never()).log(Log.WARN, tag, exception, msg)
+        verify(logger, never()).log(Log.WARN, tag, msg, exception)
 
         Log.e(tag, msg)
         verify(logger, never()).log(Log.ERROR, tag, msg)
-        verify(logger, never()).log(Log.ERROR, tag, exception, msg)
+        verify(logger, never()).log(Log.ERROR, tag, msg, exception)
 
         Log.f(tag, msg)
         verify(logger, never()).log(Log.FATAL, tag, msg)
-        verify(logger, never()).log(Log.FATAL, tag, exception, msg)
+        verify(logger, never()).log(Log.FATAL, tag, msg, exception)
     }
 
     @Test
@@ -124,29 +124,29 @@ class LoggerTest {
         Log.addLogger(logger)
         Log.removeLogger(logger)
 
-        Log.v(tag, exception, msg)
+        Log.v(tag, msg, exception)
         verify(logger, never()).log(Log.VERBOSE, tag, msg)
-        verify(logger, never()).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, never()).log(Log.VERBOSE, tag, msg, exception)
 
-        Log.d(tag, exception, msg)
+        Log.d(tag, msg, exception)
         verify(logger, never()).log(Log.DEBUG, tag, msg)
-        verify(logger, never()).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, never()).log(Log.DEBUG, tag, msg, exception)
 
-        Log.i(tag, exception, msg)
+        Log.i(tag, msg, exception)
         verify(logger, never()).log(Log.INFO, tag, msg)
-        verify(logger, never()).log(Log.INFO, tag, exception, msg)
+        verify(logger, never()).log(Log.INFO, tag, msg, exception)
 
-        Log.w(tag, exception, msg)
+        Log.w(tag, msg, exception)
         verify(logger, never()).log(Log.WARN, tag, msg)
-        verify(logger, never()).log(Log.WARN, tag, exception, msg)
+        verify(logger, never()).log(Log.WARN, tag, msg, exception)
 
-        Log.e(tag, exception, msg)
+        Log.e(tag, msg, exception)
         verify(logger, never()).log(Log.ERROR, tag, msg)
-        verify(logger, never()).log(Log.ERROR, tag, exception, msg)
+        verify(logger, never()).log(Log.ERROR, tag, msg, exception)
 
-        Log.f(tag, exception, msg)
+        Log.f(tag, msg, exception)
         verify(logger, never()).log(Log.FATAL, tag, msg)
-        verify(logger, never()).log(Log.FATAL, tag, exception, msg)
+        verify(logger, never()).log(Log.FATAL, tag, msg, exception)
     }
 
     @Test
@@ -156,27 +156,27 @@ class LoggerTest {
 
         Log.v(tag, msg)
         verify(logger, times(1)).log(Log.VERBOSE, tag, msg)
-        verify(logger, never()).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, never()).log(Log.VERBOSE, tag, msg, exception)
 
         Log.d(tag, msg)
         verify(logger, times(1)).log(Log.DEBUG, tag, msg)
-        verify(logger, never()).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, never()).log(Log.DEBUG, tag, msg, exception)
 
         Log.i(tag, msg)
         verify(logger, times(1)).log(Log.INFO, tag, msg)
-        verify(logger, never()).log(Log.INFO, tag, exception, msg)
+        verify(logger, never()).log(Log.INFO, tag, msg, exception)
 
         Log.w(tag, msg)
         verify(logger, times(1)).log(Log.WARN, tag, msg)
-        verify(logger, never()).log(Log.WARN, tag, exception, msg)
+        verify(logger, never()).log(Log.WARN, tag, msg, exception)
 
         Log.e(tag, msg)
         verify(logger, times(1)).log(Log.ERROR, tag, msg)
-        verify(logger, never()).log(Log.ERROR, tag, exception, msg)
+        verify(logger, never()).log(Log.ERROR, tag, msg, exception)
 
         Log.f(tag, msg)
         verify(logger, times(1)).log(Log.FATAL, tag, msg)
-        verify(logger, never()).log(Log.FATAL, tag, exception, msg)
+        verify(logger, never()).log(Log.FATAL, tag, msg, exception)
 
         Log.removeLogger(logger)
     }
@@ -186,29 +186,29 @@ class LoggerTest {
         Log.addLogger(logger)
         Log.addLogger(logger)
 
-        Log.v(tag, exception, msg)
+        Log.v(tag, msg, exception)
         verify(logger, never()).log(Log.VERBOSE, tag, msg)
-        verify(logger, times(1)).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, times(1)).log(Log.VERBOSE, tag, msg, exception)
 
-        Log.d(tag, exception, msg)
+        Log.d(tag, msg, exception)
         verify(logger, never()).log(Log.DEBUG, tag, msg)
-        verify(logger, times(1)).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, times(1)).log(Log.DEBUG, tag, msg, exception)
 
-        Log.i(tag, exception, msg)
+        Log.i(tag, msg, exception)
         verify(logger, never()).log(Log.INFO, tag, msg)
-        verify(logger, times(1)).log(Log.INFO, tag, exception, msg)
+        verify(logger, times(1)).log(Log.INFO, tag, msg, exception)
 
-        Log.w(tag, exception, msg)
+        Log.w(tag, msg, exception)
         verify(logger, never()).log(Log.WARN, tag, msg)
-        verify(logger, times(1)).log(Log.WARN, tag, exception, msg)
+        verify(logger, times(1)).log(Log.WARN, tag, msg, exception)
 
-        Log.e(tag, exception, msg)
+        Log.e(tag, msg, exception)
         verify(logger, never()).log(Log.ERROR, tag, msg)
-        verify(logger, times(1)).log(Log.ERROR, tag, exception, msg)
+        verify(logger, times(1)).log(Log.ERROR, tag, msg, exception)
 
-        Log.f(tag, exception, msg)
+        Log.f(tag, msg, exception)
         verify(logger, never()).log(Log.FATAL, tag, msg)
-        verify(logger, times(1)).log(Log.FATAL, tag, exception, msg)
+        verify(logger, times(1)).log(Log.FATAL, tag, msg, exception)
 
         Log.removeLogger(logger)
     }
@@ -219,27 +219,27 @@ class LoggerTest {
 
         Log.v(tag, msg)
         verify(logger, times(1)).log(Log.VERBOSE, tag, msg)
-        verify(logger, never()).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, never()).log(Log.VERBOSE, tag, msg, exception)
 
         Log.d(tag, msg)
         verify(logger, times(1)).log(Log.DEBUG, tag, msg)
-        verify(logger, never()).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, never()).log(Log.DEBUG, tag, msg, exception)
 
         Log.i(tag, msg)
         verify(logger, times(1)).log(Log.INFO, tag, msg)
-        verify(logger, never()).log(Log.INFO, tag, exception, msg)
+        verify(logger, never()).log(Log.INFO, tag, msg, exception)
 
         Log.w(tag, msg)
         verify(logger, times(1)).log(Log.WARN, tag, msg)
-        verify(logger, never()).log(Log.WARN, tag, exception, msg)
+        verify(logger, never()).log(Log.WARN, tag, msg, exception)
 
         Log.e(tag, msg)
         verify(logger, times(1)).log(Log.ERROR, tag, msg)
-        verify(logger, never()).log(Log.ERROR, tag, exception, msg)
+        verify(logger, never()).log(Log.ERROR, tag, msg, exception)
 
         Log.f(tag, msg)
         verify(logger, times(1)).log(Log.FATAL, tag, msg)
-        verify(logger, never()).log(Log.FATAL, tag, exception, msg)
+        verify(logger, never()).log(Log.FATAL, tag, msg, exception)
 
         Log.removeLogger(logger)
     }
@@ -248,29 +248,29 @@ class LoggerTest {
     fun testLogWithException() {
         Log.addLogger(logger)
 
-        Log.v(tag, exception, msg)
+        Log.v(tag, msg, exception)
         verify(logger, never()).log(Log.VERBOSE, tag, msg)
-        verify(logger, times(1)).log(Log.VERBOSE, tag, exception, msg)
+        verify(logger, times(1)).log(Log.VERBOSE, tag, msg, exception)
 
-        Log.d(tag, exception, msg)
+        Log.d(tag, msg, exception)
         verify(logger, never()).log(Log.DEBUG, tag, msg)
-        verify(logger, times(1)).log(Log.DEBUG, tag, exception, msg)
+        verify(logger, times(1)).log(Log.DEBUG, tag, msg, exception)
 
-        Log.i(tag, exception, msg)
+        Log.i(tag, msg, exception)
         verify(logger, never()).log(Log.INFO, tag, msg)
-        verify(logger, times(1)).log(Log.INFO, tag, exception, msg)
+        verify(logger, times(1)).log(Log.INFO, tag, msg, exception)
 
-        Log.w(tag, exception, msg)
+        Log.w(tag, msg, exception)
         verify(logger, never()).log(Log.WARN, tag, msg)
-        verify(logger, times(1)).log(Log.WARN, tag, exception, msg)
+        verify(logger, times(1)).log(Log.WARN, tag, msg, exception)
 
-        Log.e(tag, exception, msg)
+        Log.e(tag, msg, exception)
         verify(logger, never()).log(Log.ERROR, tag, msg)
-        verify(logger, times(1)).log(Log.ERROR, tag, exception, msg)
+        verify(logger, times(1)).log(Log.ERROR, tag, msg, exception)
 
-        Log.f(tag, exception, msg)
+        Log.f(tag, msg, exception)
         verify(logger, never()).log(Log.FATAL, tag, msg)
-        verify(logger, times(1)).log(Log.FATAL, tag, exception, msg)
+        verify(logger, times(1)).log(Log.FATAL, tag, msg, exception)
 
         Log.removeLogger(logger)
     }
