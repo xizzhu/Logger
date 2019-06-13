@@ -17,8 +17,10 @@
 package me.xizzhu.android.logger.sample
 
 import android.app.Application
+import me.xizzhu.android.logger.FileLogger
 import me.xizzhu.android.logger.Log
 import me.xizzhu.android.logger.LogcatLogger
+import java.io.File
 
 class App : Application() {
     override fun onCreate() {
@@ -27,5 +29,6 @@ class App : Application() {
         if (BuildConfig.DEBUG) {
             Log.addLogger(LogcatLogger())
         }
+        Log.addLogger(FileLogger(File(getExternalFilesDir("logs"), "xizzhu.log")))
     }
 }

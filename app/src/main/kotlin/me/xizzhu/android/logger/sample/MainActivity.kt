@@ -29,6 +29,8 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         Log.i(TAG, "onCreate")
         setContentView(R.layout.activity_main)
+
+        Log.e(TAG, "Fake exception", RuntimeException("Just a fake exception"))
     }
 
     override fun onStart() {
