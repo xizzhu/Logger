@@ -31,6 +31,10 @@ object Versions {
         }
     }
 
+    object AndroidMaven {
+        const val classpath = "2.1"
+    }
+
     object Sdk {
         const val classpath = "3.4.1"
         const val buildTools = "29.0.0"
@@ -57,6 +61,10 @@ object Versions {
 object Dependencies {
     object Sdk {
         const val classpath = "com.android.tools.build:gradle:${Versions.Sdk.classpath}"
+    }
+
+    object AndroidMaven {
+        const val classpath = "com.github.dcendents:android-maven-gradle-plugin:${Versions.AndroidMaven.classpath}"
     }
 
     object Kotlin {
