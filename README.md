@@ -1,6 +1,7 @@
 Logger
 ======
 
+[![Build Status](https://img.shields.io/travis/xizzhu/Logger.svg)](https://travis-ci.org/xizzhu/Logger)
 [![API](https://img.shields.io/badge/API-21%2B-green.svg?style=flat)](https://developer.android.com/about/versions/android-5.0.html)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 [![JitPack](https://img.shields.io/jitpack/v/github/xizzhu/Logger.svg)](https://jitpack.io/#xizzhu/Logger)

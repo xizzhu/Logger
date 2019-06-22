@@ -1,0 +1,21 @@
+language: android
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-29.0.0
+    - android-29
+
+jdk:
+  - oraclejdk8
+
+branches:
+  only:
+    - master
+
+script:
+  - ./gradlew clean testDebugUnitTest
+
+notifications:
+  email: false
