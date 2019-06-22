@@ -16,25 +16,22 @@
 
 package me.xizzhu.android.logger
 
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
-class FileLogger(logFile: File, dispatcher: CoroutineDispatcher = Dispatchers.IO)
-    : Logger, CoroutineScope by CoroutineScope(dispatcher) {
+class FileLogger(logFile: File, dispatcher: CoroutineDispatcher = Dispatchers.IO) : Logger {
     companion object {
         private val TAG = FileLogger::class.java.simpleName
     }
 
+    private val coroutineScope: CoroutineScope = CoroutineScope(Job() + dispatcher)
     private val fos: FileOutputStream by lazy { FileOutputStream(logFile, true) }
 
     override fun log(@Log.Level level: Int, tag: String, msg: String) {
-        launch {
+        coroutineScope.launch {
             try {
                 synchronized(fos) {
                     fos.write(StringBuilder().format(level, tag, msg).toString().toByteArray())
@@ -65,7 +62,7 @@ class FileLogger(logFile: File, dispatcher: CoroutineDispatcher = Dispatchers.IO
                     .append('\n')
 
     override fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable) {
-        launch {
+        coroutineScope.launch {
             try {
                 synchronized(fos) {
                     fos.write(StringBuilder().format(level, tag, msg)
