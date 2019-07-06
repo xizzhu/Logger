@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next Release
+
+#### 0.1.2
 - Updated dependencies:
   - Gradle to 5.5
   - Kotlin to 1.3.41
