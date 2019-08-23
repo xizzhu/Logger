@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next Release
+
+#### 0.1.3
 - Updated dependencies:
   - Gradle to 5.6
   - Android Gradle plugin to 3.5.0
