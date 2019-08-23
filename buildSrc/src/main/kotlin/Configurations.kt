@@ -36,8 +36,8 @@ object Versions {
     }
 
     object Sdk {
-        const val classpath = "3.4.1"
-        const val buildTools = "29.0.0"
+        const val classpath = "3.5.0"
+        const val buildTools = "29.0.2"
         const val compile = 29
         const val min = 21
         const val target = 29
@@ -46,8 +46,8 @@ object Versions {
     val java = JavaVersion.VERSION_1_8
 
     object Kotlin {
-        const val classpath = "1.3.41"
-        const val core = "1.3.41"
+        const val classpath = "1.3.50"
+        const val core = "1.3.50"
         const val coroutines = "1.2.2"
     }
 
@@ -55,7 +55,7 @@ object Versions {
         const val annotation = "1.1.0"
     }
 
-    const val mockito = "2.28.2"
+    const val mockito = "3.0.0"
 }
 
 object Dependencies {
