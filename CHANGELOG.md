@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next Release
+- Updated dependencies:
+  - Kotlin Coroutine to 1.3.0
 
 #### 0.1.3
 - Updated dependencies:
