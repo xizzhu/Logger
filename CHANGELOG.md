@@ -2,6 +2,9 @@ CHANGELOG
 ---------
 
 #### Next Release
+- Updated dependencies:
+  - Gradle to 5.6.2
+  - Kotlin Coroutine to 1.3.1
 
 #### 0.1.4
 - Updated dependencies:
