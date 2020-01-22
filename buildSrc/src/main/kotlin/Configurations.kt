@@ -47,14 +47,14 @@ object Versions {
 
     object Kotlin {
         const val core = "1.3.61"
-        const val coroutines = "1.3.1"
+        const val coroutines = "1.3.3"
     }
 
     object AndroidX {
         const val annotation = "1.1.0"
     }
 
-    const val mockito = "3.2.0"
+    const val mockito = "3.2.4"
 }
 
 object Dependencies {
