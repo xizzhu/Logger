@@ -2,6 +2,7 @@ CHANGELOG
 ---------
 
 #### Next Release
+- Used Executor instead of coroutine for FileLogger
 - Updated dependencies:
   - Gradle to 6.1.1
   - Android build tool to 29.0.3

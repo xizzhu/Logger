@@ -55,5 +55,4 @@ dependencies {
     implementation(project(":lib"))
 
     implementation(Dependencies.Kotlin.stdlib)
-    implementation(Dependencies.Kotlin.coroutinesAndroid)
 }
