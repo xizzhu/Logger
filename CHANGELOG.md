@@ -4,10 +4,11 @@ CHANGELOG
 #### Next Release
 - Used Executor instead of coroutine for FileLogger
 - Updated dependencies:
-  - Gradle to 6.1.1
+  - Gradle to 6.2.2
+  - Android Gradle plugin to 3.6.1
   - Android build tool to 29.0.3
-  - Kotlin Coroutine to 1.3.3
-  - Mockito to 3.2.4
+  - Kotlin to 1.3.70
+  - Mockito to 3.3.0
 
 #### 0.1.5
 - Updated dependencies:
