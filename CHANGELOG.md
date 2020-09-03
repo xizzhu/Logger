@@ -4,6 +4,9 @@ CHANGELOG
 #### Next Release
 - Updated dependencies:
   - Gradle to 6.6.1
+  - Android Gradle plugin to 4.0.1
+  - Android build tool to 30.0.2
+  - Compile and target SDK to 30
 
 #### 0.2.0
 - Used Executor instead of coroutine for FileLogger
