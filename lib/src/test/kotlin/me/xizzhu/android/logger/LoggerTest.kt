@@ -16,23 +16,31 @@
 
 package me.xizzhu.android.logger
 
-import org.junit.Before
-import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
+import kotlin.test.AfterTest
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 
 class LoggerTest {
     @Mock
     private lateinit var logger: Logger
 
+    private var mockCloseable: AutoCloseable? = null
+
     private val tag = "TAG"
     private val msg = "msg"
     private val exception = RuntimeException("Random exception")
 
-    @Before
+    @BeforeTest
     fun setup() {
-        MockitoAnnotations.initMocks(this)
+        mockCloseable = MockitoAnnotations.openMocks(this)
+    }
+
+    @AfterTest
+    fun tearDown() {
+        mockCloseable?.close()
     }
 
     @Test

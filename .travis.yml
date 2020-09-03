@@ -4,8 +4,8 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-29.0.3
-    - android-29
+    - build-tools-30.0.2
+    - android-30
 
 jdk:
   - oraclejdk8
@@ -13,6 +13,10 @@ jdk:
 branches:
   only:
     - master
+
+before_install:
+  - yes | sdkmanager "platforms;android-30"
+  - yes | sdkmanager "build-tools;30.0.2"
 
 script:
   - ./gradlew clean testDebugUnitTest
