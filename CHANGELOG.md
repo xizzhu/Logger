@@ -2,6 +2,10 @@ CHANGELOG
 ---------
 
 #### Next Release
+- Updated dependencies:
+  - Gradle to 6.6.1
+
+#### 0.2.0
 - Used Executor instead of coroutine for FileLogger
 - Updated dependencies:
   - Gradle to 6.2.2
