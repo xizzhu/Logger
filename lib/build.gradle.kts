@@ -64,7 +64,6 @@ tasks.withType(Test::class.java) {
 
 dependencies {
     api(Dependencies.AndroidX.annotation)
-    implementation(Dependencies.Kotlin.stdlib)
 
     testImplementation(Dependencies.Kotlin.test)
     testImplementation(Dependencies.Mockito.mockito)
