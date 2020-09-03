@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next Release
+- Bug fixes:
+  - Use internal file dir for sample app
 - Updated dependencies:
   - Gradle to 6.6.1
   - Android Gradle plugin to 4.0.1
