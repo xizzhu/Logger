@@ -29,6 +29,6 @@ class App : Application() {
         if (BuildConfig.DEBUG) {
             Log.addLogger(LogcatLogger())
         }
-        Log.addLogger(FileLogger(File(getExternalFilesDir("logs"), "xizzhu.log")))
+        Log.addLogger(FileLogger(File(filesDir, "xizzhu.log")))
     }
 }
