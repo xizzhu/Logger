@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-#### Next Release
+#### 0.3.0
 - Bug fixes:
   - Use internal file dir for sample app
   - Use CopyOnWriteArrayList to store list of loggers
