@@ -53,7 +53,7 @@ object Versions {
         const val annotation = "1.1.0"
     }
 
-    const val mockito = "3.3.0"
+    const val mockito = "3.5.9"
 }
 
 object Dependencies {

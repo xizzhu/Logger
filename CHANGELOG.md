@@ -7,6 +7,7 @@ CHANGELOG
   - Android Gradle plugin to 4.0.1
   - Android build tool to 30.0.2
   - Compile and target SDK to 30
+  - Mockito to 3.5.9
 
 #### 0.2.0
 - Used Executor instead of coroutine for FileLogger
