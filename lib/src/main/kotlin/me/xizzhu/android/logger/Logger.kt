@@ -17,6 +17,7 @@
 package me.xizzhu.android.logger
 
 import androidx.annotation.IntDef
+import java.util.concurrent.CopyOnWriteArrayList
 
 interface Logger {
     fun log(@Log.Level level: Int, tag: String, msg: String)
@@ -36,12 +37,10 @@ object Log {
     @Retention(AnnotationRetention.SOURCE)
     annotation class Level
 
-    private val loggers: ArrayList<Logger> = ArrayList()
+    private val loggers = CopyOnWriteArrayList<Logger>()
 
     fun addLogger(logger: Logger) {
-        if (!loggers.contains(logger)) {
-            loggers.add(logger)
-        }
+        loggers.addIfAbsent(logger)
     }
 
     fun removeLogger(logger: Logger) {
