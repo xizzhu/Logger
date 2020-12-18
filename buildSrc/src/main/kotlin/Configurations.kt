@@ -53,6 +53,10 @@ object Versions {
         const val annotation = "1.1.0"
     }
 
+    object Firebase {
+        const val crashlytics = "17.3.0"
+    }
+
     const val mockito = "3.6.28"
 }
 
@@ -72,6 +76,10 @@ object Dependencies {
 
     object AndroidX {
         const val annotation = "androidx.annotation:annotation:${Versions.AndroidX.annotation}"
+    }
+
+    object Firebase {
+        const val crashlytics = "com.google.firebase:firebase-crashlytics:${Versions.Firebase.crashlytics}"
     }
 
     object Mockito {

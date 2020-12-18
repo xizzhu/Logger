@@ -64,6 +64,7 @@ tasks.withType(Test::class.java) {
 
 dependencies {
     api(Dependencies.AndroidX.annotation)
+    compileOnly(Dependencies.Firebase.crashlytics)
 
     testImplementation(Dependencies.Kotlin.test)
     testImplementation(Dependencies.Mockito.mockito)

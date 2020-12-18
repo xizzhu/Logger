@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next Release
+- New features:
+  - Add CrashlyticsLogger
 - Updated dependencies:
   - Gradle to 6.7.1
   - Android Gradle plugin to 4.1.1
