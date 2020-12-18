@@ -1,6 +1,14 @@
 CHANGELOG
 ---------
 
+#### Next Release
+- Updated dependencies:
+  - Gradle to 6.7.1
+  - Android Gradle plugin to 4.1.1
+  - Android build tool to 30.0.3
+  - Kotlin to 1.4.21
+  - Mockito to 3.6.28
+
 #### 0.3.0
 - Bug fixes:
   - Use internal file dir for sample app
