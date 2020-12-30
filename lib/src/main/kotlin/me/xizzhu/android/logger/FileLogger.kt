@@ -31,7 +31,7 @@ class FileLogger(logFile: File, private val executor: Executor = Executors.newSi
     private val fos: FileOutputStream by lazy { FileOutputStream(logFile, true) }
 
     override fun log(@Log.Level level: Int, tag: String, msg: String) {
-        executor.run {
+        executor.execute {
             try {
                 synchronized(fos) {
                     fos.write(StringBuilder().format(level, tag, msg).toString().toByteArray())
@@ -62,7 +62,7 @@ class FileLogger(logFile: File, private val executor: Executor = Executors.newSi
                     .append('\n')
 
     override fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable) {
-        executor.run {
+        executor.execute {
             try {
                 synchronized(fos) {
                     fos.write(StringBuilder().format(level, tag, msg)
