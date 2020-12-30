@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-#### Next Release
+#### 0.4.1
 - Bug fixes:
   - Should do `executor.execute()` instead of `run()` (#4)
 
