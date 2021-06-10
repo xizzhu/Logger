@@ -31,6 +31,7 @@ class FileLogger(logFile: File,
     }
 
     private val fos: FileOutputStream by lazy { FileOutputStream(logFile, true) }
+    private val dateFormat: SimpleDateFormat by lazy { SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US) }
 
     override fun log(@Log.Level level: Int, tag: String, msg: String) {
         executor.execute {
@@ -46,7 +47,7 @@ class FileLogger(logFile: File,
     }
 
     private fun StringBuilder.format(@Log.Level level: Int, tag: String, msg: String): StringBuilder =
-            append(SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US).format(Date()))
+            append(dateFormat.format(Date()))
                     .append(' ')
                     .append(when (level) {
                         Log.VERBOSE -> 'V'
