@@ -24,6 +24,9 @@ android {
         sourceCompatibility = Versions.java
         targetCompatibility = Versions.java
     }
+    kotlinOptions {
+        jvmTarget = Versions.Kotlin.jvmTarget
+    }
 
     buildToolsVersion(Versions.Sdk.buildTools)
     compileSdkVersion(Versions.Sdk.compile)

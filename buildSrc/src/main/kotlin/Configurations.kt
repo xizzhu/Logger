@@ -46,6 +46,7 @@ object Versions {
     val java = JavaVersion.VERSION_1_8
 
     object Kotlin {
+        const val jvmTarget = "1.8"
         const val core = "1.4.21"
     }
 
@@ -57,7 +58,7 @@ object Versions {
         const val crashlytics = "18.0.1"
     }
 
-    const val mockito = "3.6.28"
+    const val mockk = "1.11.0"
 }
 
 object Dependencies {
@@ -82,7 +83,7 @@ object Dependencies {
         const val crashlytics = "com.google.firebase:firebase-crashlytics:${Versions.Firebase.crashlytics}"
     }
 
-    object Mockito {
-        const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
+    object Mockk {
+        const val mockk = "io.mockk:mockk:${Versions.mockk}"
     }
 }

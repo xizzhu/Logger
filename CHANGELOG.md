@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next release
+- Changes:
+  - Use mockk instead of Mockito
 - Updated dependencies:
   - Gradle to 6.9
   - Android Gradle plugin to 4.2.1
