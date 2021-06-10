@@ -20,6 +20,9 @@ import androidx.annotation.IntDef
 import java.util.concurrent.CopyOnWriteArrayList
 
 interface Logger {
+    @Log.Level
+    var level: Int
+
     fun log(@Log.Level level: Int, tag: String, msg: String)
 
     fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable)
@@ -97,13 +100,17 @@ object Log {
 
     private fun log(@Level level: Int, tag: String, msg: String) {
         for (logger in loggers) {
-            logger.log(level, tag, msg)
+            if (level >= logger.level) {
+                logger.log(level, tag, msg)
+            }
         }
     }
 
     private fun log(@Level level: Int, tag: String, msg: String, e: Throwable) {
         for (logger in loggers) {
-            logger.log(level, tag, msg, e)
+            if (level >= logger.level) {
+                logger.log(level, tag, msg, e)
+            }
         }
     }
 }

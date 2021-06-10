@@ -2,6 +2,8 @@ CHANGELOG
 ---------
 
 #### Next release
+- New features:
+  - Support log level
 - Changes:
   - Use mockk instead of Mockito
 - Updated dependencies:

@@ -16,7 +16,7 @@
 
 package me.xizzhu.android.logger
 
-class LogcatLogger : Logger {
+class LogcatLogger(@Log.Level override var level: Int = Log.VERBOSE) : Logger {
     override fun log(@Log.Level level: Int, tag: String, msg: String) {
         when (level) {
             Log.VERBOSE -> android.util.Log.v(tag, msg)

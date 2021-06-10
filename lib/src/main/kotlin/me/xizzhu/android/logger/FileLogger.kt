@@ -23,7 +23,9 @@ import java.util.*
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
-class FileLogger(logFile: File, private val executor: Executor = Executors.newSingleThreadExecutor()) : Logger {
+class FileLogger(logFile: File,
+                 @Log.Level override var level: Int = Log.VERBOSE,
+                 private val executor: Executor = Executors.newSingleThreadExecutor()) : Logger {
     companion object {
         private val TAG = FileLogger::class.java.simpleName
     }

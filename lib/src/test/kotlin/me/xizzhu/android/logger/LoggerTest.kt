@@ -34,6 +34,7 @@ class LoggerTest {
         logger = mockk()
         every { logger.log(any(), any(), any()) } returns Unit
         every { logger.log(any(), any(), any(), any()) } returns Unit
+        every { logger.level } returns Log.VERBOSE
     }
 
     @Test
@@ -244,6 +245,90 @@ class LoggerTest {
         Log.i(tag, msg, exception)
         verify(exactly = 1) {
             logger.log(Log.INFO, tag, msg, exception)
+        }
+
+        Log.w(tag, msg, exception)
+        verify(exactly = 1) {
+            logger.log(Log.WARN, tag, msg, exception)
+        }
+
+        Log.e(tag, msg, exception)
+        verify(exactly = 1) {
+            logger.log(Log.ERROR, tag, msg, exception)
+        }
+
+        Log.f(tag, msg, exception)
+        verify(exactly = 1) {
+            logger.log(Log.FATAL, tag, msg, exception)
+        }
+
+        verify(exactly = 0) {
+            logger.log(any(), any(), any())
+        }
+
+        Log.removeLogger(logger)
+    }
+
+    @Test
+    fun testLogLevel() {
+        every { logger.level } returns Log.INFO
+        Log.addLogger(logger)
+
+        Log.v(tag, msg)
+        verify(exactly = 0) {
+            logger.log(Log.VERBOSE, any(), any())
+        }
+
+        Log.d(tag, msg)
+        verify(exactly = 0) {
+            logger.log(Log.DEBUG, any(), any())
+        }
+
+        Log.i(tag, msg)
+        verify(exactly = 1) {
+            logger.log(Log.INFO, tag, msg)
+        }
+
+        Log.w(tag, msg)
+        verify(exactly = 1) {
+            logger.log(Log.WARN, tag, msg)
+        }
+
+        Log.e(tag, msg)
+        verify(exactly = 1) {
+            logger.log(Log.ERROR, tag, msg)
+        }
+
+        Log.f(tag, msg)
+        verify(exactly = 1) {
+            logger.log(Log.FATAL, tag, msg)
+        }
+
+        verify(exactly = 0) {
+            logger.log(any(), any(), any(), any())
+        }
+
+        Log.removeLogger(logger)
+    }
+
+    @Test
+    fun testLogLevelWithException() {
+        every { logger.level } returns Log.WARN
+        Log.addLogger(logger)
+
+        Log.v(tag, msg, exception)
+        verify(exactly = 0) {
+            logger.log(Log.VERBOSE, any(), any(), any())
+        }
+
+        Log.d(tag, msg, exception)
+        verify(exactly = 0) {
+            logger.log(Log.DEBUG, any(), any(), any())
+        }
+
+        Log.i(tag, msg, exception)
+        verify(exactly = 0) {
+            logger.log(Log.INFO, any(), any(), any())
         }
 
         Log.w(tag, msg, exception)

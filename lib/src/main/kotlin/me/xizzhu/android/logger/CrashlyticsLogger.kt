@@ -18,7 +18,7 @@ package me.xizzhu.android.logger
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
-class CrashlyticsLogger : Logger {
+class CrashlyticsLogger(@Log.Level override var level: Int = Log.VERBOSE) : Logger {
     private val crashlytics by lazy { FirebaseCrashlytics.getInstance() }
 
     override fun log(level: Int, tag: String, msg: String) {
