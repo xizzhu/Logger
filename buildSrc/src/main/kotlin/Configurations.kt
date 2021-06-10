@@ -36,7 +36,7 @@ object Versions {
     }
 
     object Sdk {
-        const val classpath = "4.1.1"
+        const val classpath = "4.2.1"
         const val buildTools = "30.0.3"
         const val compile = 30
         const val min = 21
@@ -50,11 +50,11 @@ object Versions {
     }
 
     object AndroidX {
-        const val annotation = "1.1.0"
+        const val annotation = "1.2.0"
     }
 
     object Firebase {
-        const val crashlytics = "17.3.0"
+        const val crashlytics = "18.0.1"
     }
 
     const val mockito = "3.6.28"

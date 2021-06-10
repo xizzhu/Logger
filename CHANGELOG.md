@@ -1,6 +1,14 @@
 CHANGELOG
 ---------
 
+#### Next release
+- Updated dependencies:
+  - Gradle to 6.9
+  - Android Gradle plugin to 4.2.1
+  - Kotlin to 1.5.10
+  - AndroidX Annotation to 1.2.0
+  - Firebase Crashlytics to 18.0.1 
+
 #### 0.4.1
 - Bug fixes:
   - Should do `executor.execute()` instead of `run()` (#4)
