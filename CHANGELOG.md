@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-#### Next release
+#### 0.5.0
 - New features:
   - Support log level
 - Changes:

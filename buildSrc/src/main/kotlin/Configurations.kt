@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Xizhi Zhu
+ * Copyright (C) 2021 Xizhi Zhu
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ object Configurations {
 
 object Versions {
     object Logger {
-        const val code = 401
+        const val code = 500
         val name: String by lazy {
             "${code / 10000}.${(code % 10000) / 100}.${code % 100} " +
                     "(${LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))})"
