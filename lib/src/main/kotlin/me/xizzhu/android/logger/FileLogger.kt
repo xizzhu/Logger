@@ -33,11 +33,11 @@ class FileLogger(logFile: File,
     private val fos: FileOutputStream by lazy { FileOutputStream(logFile, true) }
     private val dateFormat: SimpleDateFormat by lazy { SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US) }
 
-    override fun log(@Log.Level level: Int, tag: String, msg: String) {
+    override fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable?) {
         executor.execute {
             try {
                 synchronized(fos) {
-                    fos.write(StringBuilder().format(level, tag, msg).toString().toByteArray())
+                    fos.write(formatLog(level, tag, msg, e).toByteArray())
                     fos.flush()
                 }
             } catch (e: Exception) {
@@ -46,37 +46,25 @@ class FileLogger(logFile: File,
         }
     }
 
-    private fun StringBuilder.format(@Log.Level level: Int, tag: String, msg: String): StringBuilder =
-            append(dateFormat.format(Date()))
-                    .append(' ')
-                    .append(when (level) {
-                        Log.VERBOSE -> 'V'
-                        Log.DEBUG -> 'D'
-                        Log.INFO -> 'I'
-                        Log.WARN -> 'W'
-                        Log.ERROR -> 'E'
-                        Log.FATAL -> 'F'
-                        else -> throw IllegalArgumentException("Unsupported log level - $this")
-                    })
-                    .append('/')
-                    .append(tag)
-                    .append(": ")
-                    .append(msg)
-                    .append('\n')
-
-    override fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable) {
-        executor.execute {
-            try {
-                synchronized(fos) {
-                    fos.write(StringBuilder().format(level, tag, msg)
-                            .append(android.util.Log.getStackTraceString(e))
-                            .append('\n')
-                            .toString().toByteArray())
-                    fos.flush()
-                }
-            } catch (e: Exception) {
-                android.util.Log.e(TAG, "Failed to log to file", e)
-            }
-        }
+    private fun formatLog(@Log.Level level: Int, tag: String, msg: String, e: Throwable?): String {
+        val sb = StringBuilder()
+                .append(dateFormat.format(Date()))
+                .append(' ')
+                .append(when (level) {
+                    Log.VERBOSE -> 'V'
+                    Log.DEBUG -> 'D'
+                    Log.INFO -> 'I'
+                    Log.WARN -> 'W'
+                    Log.ERROR -> 'E'
+                    Log.FATAL -> 'F'
+                    else -> throw IllegalArgumentException("Unsupported log level - $this")
+                })
+                .append('/')
+                .append(tag)
+                .append(": ")
+                .append(msg)
+                .append('\n')
+        e?.let { sb.append(android.util.Log.getStackTraceString(it)).append('\n') }
+        return sb.toString()
     }
 }

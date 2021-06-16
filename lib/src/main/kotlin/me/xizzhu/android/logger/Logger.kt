@@ -23,9 +23,7 @@ interface Logger {
     @Log.Level
     var level: Int
 
-    fun log(@Log.Level level: Int, tag: String, msg: String)
-
-    fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable)
+    fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable?)
 }
 
 object Log {
@@ -98,15 +96,7 @@ object Log {
         log(FATAL, tag, msg, e)
     }
 
-    private fun log(@Level level: Int, tag: String, msg: String) {
-        for (logger in loggers) {
-            if (level >= logger.level) {
-                logger.log(level, tag, msg)
-            }
-        }
-    }
-
-    private fun log(@Level level: Int, tag: String, msg: String, e: Throwable) {
+    private fun log(@Level level: Int, tag: String, msg: String, e: Throwable? = null) {
         for (logger in loggers) {
             if (level >= logger.level) {
                 logger.log(level, tag, msg, e)

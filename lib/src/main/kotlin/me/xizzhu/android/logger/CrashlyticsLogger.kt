@@ -21,16 +21,10 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 class CrashlyticsLogger(@Log.Level override var level: Int = Log.VERBOSE) : Logger {
     private val crashlytics by lazy { FirebaseCrashlytics.getInstance() }
 
-    override fun log(level: Int, tag: String, msg: String) {
+    override fun log(level: Int, tag: String, msg: String, e: Throwable?) {
         if (msg.isNotBlank()) {
             crashlytics.log("$tag: $msg")
         }
-    }
-
-    override fun log(level: Int, tag: String, msg: String, e: Throwable) {
-        if (msg.isNotBlank()) {
-            crashlytics.log("$tag: $msg")
-        }
-        crashlytics.recordException(e)
+        e?.let { crashlytics.recordException(it) }
     }
 }

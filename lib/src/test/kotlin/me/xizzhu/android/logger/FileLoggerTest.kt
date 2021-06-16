@@ -37,12 +37,12 @@ class FileLoggerTest {
 
     @Test
     fun testLog() {
-        logger.log(Log.VERBOSE, tag, msg)
-        logger.log(Log.DEBUG, tag, msg)
-        logger.log(Log.INFO, tag, msg)
-        logger.log(Log.WARN, tag, msg)
-        logger.log(Log.ERROR, tag, msg)
-        logger.log(Log.FATAL, tag, msg)
+        logger.log(Log.VERBOSE, tag, msg, null)
+        logger.log(Log.DEBUG, tag, msg, null)
+        logger.log(Log.INFO, tag, msg, null)
+        logger.log(Log.WARN, tag, msg, null)
+        logger.log(Log.ERROR, tag, msg, null)
+        logger.log(Log.FATAL, tag, msg, null)
 
         logFile.forEachLineIndexed { index, line ->
             // make sure the first part is a valid timestamp

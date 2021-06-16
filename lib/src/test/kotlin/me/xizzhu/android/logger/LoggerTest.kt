@@ -32,7 +32,6 @@ class LoggerTest {
     @BeforeTest
     fun setup() {
         logger = mockk()
-        every { logger.log(any(), any(), any()) } returns Unit
         every { logger.log(any(), any(), any(), any()) } returns Unit
         every { logger.level } returns Log.VERBOSE
     }
@@ -47,7 +46,6 @@ class LoggerTest {
         Log.f(tag, msg)
 
         verify(exactly = 0) {
-            logger.log(any(), any(), any())
             logger.log(any(), any(), any(), any())
         }
     }
@@ -62,7 +60,6 @@ class LoggerTest {
         Log.f(tag, msg, exception)
 
         verify(exactly = 0) {
-            logger.log(any(), any(), any())
             logger.log(any(), any(), any(), any())
         }
     }
@@ -80,7 +77,6 @@ class LoggerTest {
         Log.f(tag, msg)
 
         verify(exactly = 0) {
-            logger.log(any(), any(), any())
             logger.log(any(), any(), any(), any())
         }
     }
@@ -98,7 +94,6 @@ class LoggerTest {
         Log.f(tag, msg, exception)
 
         verify(exactly = 0) {
-            logger.log(any(), any(), any())
             logger.log(any(), any(), any(), any())
         }
     }
@@ -110,36 +105,32 @@ class LoggerTest {
 
         Log.v(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.VERBOSE, tag, msg)
+            logger.log(Log.VERBOSE, tag, msg, null)
         }
 
         Log.d(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.DEBUG, tag, msg)
+            logger.log(Log.DEBUG, tag, msg, null)
         }
 
         Log.i(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.INFO, tag, msg)
+            logger.log(Log.INFO, tag, msg, null)
         }
 
         Log.w(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.WARN, tag, msg)
+            logger.log(Log.WARN, tag, msg, null)
         }
 
         Log.e(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.ERROR, tag, msg)
+            logger.log(Log.ERROR, tag, msg, null)
         }
 
         Log.f(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.FATAL, tag, msg)
-        }
-
-        verify(exactly = 0) {
-            logger.log(any(), any(), any(), any())
+            logger.log(Log.FATAL, tag, msg, null)
         }
 
         Log.removeLogger(logger)
@@ -180,10 +171,6 @@ class LoggerTest {
             logger.log(Log.FATAL, tag, msg, exception)
         }
 
-        verify(exactly = 0) {
-            logger.log(any(), any(), any())
-        }
-
         Log.removeLogger(logger)
     }
 
@@ -193,36 +180,32 @@ class LoggerTest {
 
         Log.v(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.VERBOSE, tag, msg)
+            logger.log(Log.VERBOSE, tag, msg, null)
         }
 
         Log.d(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.DEBUG, tag, msg)
+            logger.log(Log.DEBUG, tag, msg, null)
         }
 
         Log.i(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.INFO, tag, msg)
+            logger.log(Log.INFO, tag, msg, null)
         }
 
         Log.w(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.WARN, tag, msg)
+            logger.log(Log.WARN, tag, msg, null)
         }
 
         Log.e(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.ERROR, tag, msg)
+            logger.log(Log.ERROR, tag, msg, null)
         }
 
         Log.f(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.FATAL, tag, msg)
-        }
-
-        verify(exactly = 0) {
-            logger.log(any(), any(), any(), any())
+            logger.log(Log.FATAL, tag, msg, null)
         }
 
         Log.removeLogger(logger)
@@ -262,10 +245,6 @@ class LoggerTest {
             logger.log(Log.FATAL, tag, msg, exception)
         }
 
-        verify(exactly = 0) {
-            logger.log(any(), any(), any())
-        }
-
         Log.removeLogger(logger)
     }
 
@@ -276,36 +255,32 @@ class LoggerTest {
 
         Log.v(tag, msg)
         verify(exactly = 0) {
-            logger.log(Log.VERBOSE, any(), any())
+            logger.log(Log.VERBOSE, any(), any(), any())
         }
 
         Log.d(tag, msg)
         verify(exactly = 0) {
-            logger.log(Log.DEBUG, any(), any())
+            logger.log(Log.DEBUG, any(), any(), any())
         }
 
         Log.i(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.INFO, tag, msg)
+            logger.log(Log.INFO, tag, msg, null)
         }
 
         Log.w(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.WARN, tag, msg)
+            logger.log(Log.WARN, tag, msg, null)
         }
 
         Log.e(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.ERROR, tag, msg)
+            logger.log(Log.ERROR, tag, msg, null)
         }
 
         Log.f(tag, msg)
         verify(exactly = 1) {
-            logger.log(Log.FATAL, tag, msg)
-        }
-
-        verify(exactly = 0) {
-            logger.log(any(), any(), any(), any())
+            logger.log(Log.FATAL, tag, msg, null)
         }
 
         Log.removeLogger(logger)
@@ -344,10 +319,6 @@ class LoggerTest {
         Log.f(tag, msg, exception)
         verify(exactly = 1) {
             logger.log(Log.FATAL, tag, msg, exception)
-        }
-
-        verify(exactly = 0) {
-            logger.log(any(), any(), any())
         }
 
         Log.removeLogger(logger)

@@ -5,6 +5,7 @@ CHANGELOG
 - New features:
   - Support log level
 - Changes:
+  - Simplify Logger interface by merging the two log() functions
   - Use mockk instead of Mockito
 - Updated dependencies:
   - Gradle to 6.9

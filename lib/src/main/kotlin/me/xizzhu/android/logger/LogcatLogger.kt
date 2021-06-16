@@ -17,25 +17,25 @@
 package me.xizzhu.android.logger
 
 class LogcatLogger(@Log.Level override var level: Int = Log.VERBOSE) : Logger {
-    override fun log(@Log.Level level: Int, tag: String, msg: String) {
-        when (level) {
-            Log.VERBOSE -> android.util.Log.v(tag, msg)
-            Log.DEBUG -> android.util.Log.d(tag, msg)
-            Log.INFO -> android.util.Log.i(tag, msg)
-            Log.WARN -> android.util.Log.w(tag, msg)
-            Log.ERROR -> android.util.Log.e(tag, msg)
-            Log.FATAL -> android.util.Log.wtf(tag, msg)
-        }
-    }
-
-    override fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable) {
-        when (level) {
-            Log.VERBOSE -> android.util.Log.v(tag, msg, e)
-            Log.DEBUG -> android.util.Log.d(tag, msg, e)
-            Log.INFO -> android.util.Log.i(tag, msg, e)
-            Log.WARN -> android.util.Log.w(tag, msg, e)
-            Log.ERROR -> android.util.Log.e(tag, msg, e)
-            Log.FATAL -> android.util.Log.wtf(tag, msg, e)
+    override fun log(@Log.Level level: Int, tag: String, msg: String, e: Throwable?) {
+        if (e != null) {
+            when (level) {
+                Log.VERBOSE -> android.util.Log.v(tag, msg, e)
+                Log.DEBUG -> android.util.Log.d(tag, msg, e)
+                Log.INFO -> android.util.Log.i(tag, msg, e)
+                Log.WARN -> android.util.Log.w(tag, msg, e)
+                Log.ERROR -> android.util.Log.e(tag, msg, e)
+                Log.FATAL -> android.util.Log.wtf(tag, msg, e)
+            }
+        } else {
+            when (level) {
+                Log.VERBOSE -> android.util.Log.v(tag, msg)
+                Log.DEBUG -> android.util.Log.d(tag, msg)
+                Log.INFO -> android.util.Log.i(tag, msg)
+                Log.WARN -> android.util.Log.w(tag, msg)
+                Log.ERROR -> android.util.Log.e(tag, msg)
+                Log.FATAL -> android.util.Log.wtf(tag, msg)
+            }
         }
     }
 }
