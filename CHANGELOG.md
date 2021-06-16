@@ -7,6 +7,7 @@ CHANGELOG
 - Changes:
   - Simplify Logger interface by merging the two log() functions
   - Use mockk instead of Mockito
+  - Remove jcenter() from repository dependencies
 - Updated dependencies:
   - Gradle to 6.9
   - Android Gradle plugin to 4.2.1
