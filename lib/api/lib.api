@@ -1,0 +1,70 @@
+public final class me/xizzhu/android/logger/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
+public final class me/xizzhu/android/logger/CrashlyticsLogger : me/xizzhu/android/logger/Logger {
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getLevel ()I
+	public fun log (ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public fun setLevel (I)V
+}
+
+public final class me/xizzhu/android/logger/FileLogger : me/xizzhu/android/logger/Logger {
+	public static final field Companion Lme/xizzhu/android/logger/FileLogger$Companion;
+	public fun <init> (Ljava/io/File;ILjava/util/concurrent/Executor;)V
+	public synthetic fun <init> (Ljava/io/File;ILjava/util/concurrent/Executor;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getLevel ()I
+	public fun log (ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public fun setLevel (I)V
+}
+
+public final class me/xizzhu/android/logger/FileLogger$Companion {
+}
+
+public final class me/xizzhu/android/logger/Log {
+	public static final field DEBUG I
+	public static final field ERROR I
+	public static final field FATAL I
+	public static final field INFO I
+	public static final field INSTANCE Lme/xizzhu/android/logger/Log;
+	public static final field VERBOSE I
+	public static final field WARN I
+	public final fun addLogger (Lme/xizzhu/android/logger/Logger;)V
+	public final fun d (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun d (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun e (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun e (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun f (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun f (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun i (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun i (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun removeLogger (Lme/xizzhu/android/logger/Logger;)V
+	public final fun v (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun v (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun w (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun w (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
+public abstract interface annotation class me/xizzhu/android/logger/Log$Level : java/lang/annotation/Annotation {
+}
+
+public final class me/xizzhu/android/logger/LogcatLogger : me/xizzhu/android/logger/Logger {
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getLevel ()I
+	public fun log (ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public fun setLevel (I)V
+}
+
+public abstract interface class me/xizzhu/android/logger/Logger {
+	public abstract fun getLevel ()I
+	public abstract fun log (ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public abstract fun setLevel (I)V
+}
+

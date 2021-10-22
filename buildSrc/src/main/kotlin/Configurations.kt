@@ -31,8 +31,8 @@ object Versions {
         }
     }
 
-    object AndroidMaven {
-        const val classpath = "2.1"
+    object BinaryCompatibilityValidator {
+        const val classpath = "0.7.1"
     }
 
     object Sdk {
@@ -66,8 +66,8 @@ object Dependencies {
         const val classpath = "com.android.tools.build:gradle:${Versions.Sdk.classpath}"
     }
 
-    object AndroidMaven {
-        const val classpath = "com.github.dcendents:android-maven-gradle-plugin:${Versions.AndroidMaven.classpath}"
+    object BinaryCompatibilityValidator {
+        const val classpath = "org.jetbrains.kotlinx:binary-compatibility-validator:${Versions.BinaryCompatibilityValidator.classpath}"
     }
 
     object Kotlin {

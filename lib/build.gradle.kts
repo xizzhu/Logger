@@ -16,7 +16,7 @@
 
 plugins {
     id("com.android.library")
-//    id("com.github.dcendents.android-maven")
+    id("binary-compatibility-validator")
     kotlin("android")
 }
 apply("$rootDir/scripts/coverage.gradle.kts")
@@ -58,7 +58,7 @@ android {
     }
 }
 
-tasks.withType(Test::class.java) {
+tasks.withType(Test::class) {
     maxParallelForks = Runtime.getRuntime().availableProcessors() / 2
 }
 

@@ -22,7 +22,7 @@ buildscript {
     dependencies {
         classpath(Dependencies.Sdk.classpath)
         classpath(Dependencies.Kotlin.classpath)
-        classpath(Dependencies.AndroidMaven.classpath)
+        classpath(Dependencies.BinaryCompatibilityValidator.classpath)
     }
 }
 
