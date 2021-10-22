@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-#### Next release
+#### 0.6.1
 - Changes:
   - Allow app to provide FirebaseCrashlytics instance
 
