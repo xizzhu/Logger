@@ -69,6 +69,7 @@ dependencies {
 
     testImplementation(Dependencies.Kotlin.test)
     testImplementation(Dependencies.Mockk.mockk)
+    testImplementation(Dependencies.Firebase.crashlytics)
 }
 
 afterEvaluate {
