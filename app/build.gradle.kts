@@ -28,14 +28,14 @@ android {
         jvmTarget = Versions.Kotlin.jvmTarget
     }
 
-    buildToolsVersion(Versions.Sdk.buildTools)
-    compileSdkVersion(Versions.Sdk.compile)
+    buildToolsVersion = Versions.Sdk.buildTools
+    compileSdk = Versions.Sdk.compile
 
     defaultConfig {
         applicationId = Configurations.sampleAppId
 
-        minSdkVersion(Versions.Sdk.min)
-        targetSdkVersion(Versions.Sdk.target)
+        minSdk = Versions.Sdk.min
+        targetSdk = Versions.Sdk.target
 
         versionCode = Versions.Logger.code
         versionName = Versions.Logger.name
@@ -46,12 +46,8 @@ android {
     }
 
     packagingOptions {
-        exclude("META-INF/atomicfu.kotlin_module")
+        resources.excludes.add("META-INF/atomicfu.kotlin_module")
     }
-}
-
-tasks.withType(Test::class.java) {
-    maxParallelForks = Runtime.getRuntime().availableProcessors() / 2
 }
 
 dependencies {

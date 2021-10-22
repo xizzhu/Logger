@@ -54,7 +54,7 @@ android {
     }
 
     packagingOptions {
-        exclude("META-INF/atomicfu.kotlin_module")
+        resources.excludes.add("META-INF/atomicfu.kotlin_module")
     }
 }
 
