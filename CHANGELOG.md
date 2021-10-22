@@ -1,6 +1,18 @@
 CHANGELOG
 ---------
 
+#### Next release
+- Changes:
+  - Use GitHub as CI
+- Updated dependencies:
+  - Gradle to 7.0.2
+  - Java and Kotlin JVM Target to 11
+  - Android Gradle plugin to 7.0.3
+  - Android Build SDK to 31.0.0, Compile and Target to 31
+  - Kotlin to 1.5.31
+  - Firebase Crashlytics to 18.2.3
+  - Mockk to 1.12.0
+
 #### 0.5.0
 - New features:
   - Support log level

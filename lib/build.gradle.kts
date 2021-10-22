@@ -16,7 +16,7 @@
 
 plugins {
     id("com.android.library")
-    id("com.github.dcendents.android-maven")
+//    id("com.github.dcendents.android-maven")
     kotlin("android")
 }
 apply("$rootDir/scripts/coverage.gradle.kts")
@@ -30,15 +30,12 @@ android {
         jvmTarget = Versions.Kotlin.jvmTarget
     }
 
-    buildToolsVersion(Versions.Sdk.buildTools)
-    compileSdkVersion(Versions.Sdk.compile)
+    buildToolsVersion = Versions.Sdk.buildTools
+    compileSdk = Versions.Sdk.compile
 
     defaultConfig {
-        minSdkVersion(Versions.Sdk.min)
-        targetSdkVersion(Versions.Sdk.target)
-
-        versionCode = Versions.Logger.code
-        versionName = Versions.Logger.name
+        minSdk = Versions.Sdk.min
+        targetSdk = Versions.Sdk.target
     }
 
     sourceSets {

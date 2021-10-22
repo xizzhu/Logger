@@ -36,18 +36,18 @@ object Versions {
     }
 
     object Sdk {
-        const val classpath = "4.2.1"
-        const val buildTools = "30.0.3"
-        const val compile = 30
+        const val classpath = "7.0.3"
+        const val buildTools = "31.0.0"
+        const val compile = 31
         const val min = 21
-        const val target = 30
+        const val target = 31
     }
 
-    val java = JavaVersion.VERSION_1_8
+    val java = JavaVersion.VERSION_11
 
     object Kotlin {
-        const val jvmTarget = "1.8"
-        const val core = "1.4.21"
+        const val jvmTarget = "11"
+        const val core = "1.5.31"
     }
 
     object AndroidX {
@@ -55,10 +55,10 @@ object Versions {
     }
 
     object Firebase {
-        const val crashlytics = "18.0.1"
+        const val crashlytics = "18.2.3"
     }
 
-    const val mockk = "1.11.0"
+    const val mockk = "1.12.0"
 }
 
 object Dependencies {
