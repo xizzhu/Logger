@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+#### Next release
+- Changes:
+  - Allow app to provide FirebaseCrashlytics instance
+
 #### 0.6.0
 - Changes:
   - Use GitHub as CI

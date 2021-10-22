@@ -18,12 +18,17 @@ package me.xizzhu.android.logger
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
-class CrashlyticsLogger(@Log.Level override var level: Int = Log.VERBOSE) : Logger {
-    private val crashlytics by lazy { FirebaseCrashlytics.getInstance() }
-
+class CrashlyticsLogger @JvmOverloads constructor(
+        @Log.Level override var level: Int = Log.VERBOSE,
+        private val crashlytics: FirebaseCrashlytics = FirebaseCrashlytics.getInstance()
+) : Logger {
     override fun log(level: Int, tag: String, msg: String, e: Throwable?) {
         if (msg.isNotBlank()) {
-            crashlytics.log("$tag: $msg")
+            if (tag.isBlank()) {
+                crashlytics.log(msg)
+            } else {
+                crashlytics.log("$tag: $msg")
+            }
         }
         e?.let { crashlytics.recordException(it) }
     }
