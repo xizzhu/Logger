@@ -17,6 +17,7 @@
 plugins {
     id("com.android.library")
     id("binary-compatibility-validator")
+    id("maven-publish")
     kotlin("android")
 }
 apply("$rootDir/scripts/coverage.gradle.kts")
@@ -68,4 +69,18 @@ dependencies {
 
     testImplementation(Dependencies.Kotlin.test)
     testImplementation(Dependencies.Mockk.mockk)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = Configurations.libGroupId
+                artifactId = Configurations.libArtifactId
+                version = Versions.Logger.name
+
+                from(components["release"])
+            }
+        }
+    }
 }

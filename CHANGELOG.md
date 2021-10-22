@@ -1,9 +1,10 @@
 CHANGELOG
 ---------
 
-#### Next release
+#### 0.6.0
 - Changes:
   - Use GitHub as CI
+  - Artifact group ID changed to me.xizzhu
 - Updated dependencies:
   - Gradle to 7.0.2
   - Java and Kotlin JVM Target to 11

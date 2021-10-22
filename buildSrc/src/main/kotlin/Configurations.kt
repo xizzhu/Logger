@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import org.gradle.api.JavaVersion
 
 object Configurations {
+    val libGroupId = "me.xizzhu"
+    val libArtifactId = "logger"
     val sampleAppId = "me.xizzhu.android.logger.sample"
 }
 
 object Versions {
     object Logger {
-        const val code = 500
-        val name: String by lazy {
-            "${code / 10000}.${(code % 10000) / 100}.${code % 100} " +
-                    "(${LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))})"
-        }
+        const val code = 600
+        const val name = "${code / 10000}.${(code % 10000) / 100}.${code % 100}"
     }
 
     object BinaryCompatibilityValidator {

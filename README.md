@@ -4,7 +4,7 @@ Logger
 [![Build Status](https://img.shields.io/github/workflow/status/xizzhu/Logger/Android%20CI/master?color=blue)](https://github.com/xizzhu/Logger/actions)
 [![API](https://img.shields.io/badge/API-21%2B-green.svg?style=flat)](https://developer.android.com/about/versions/android-5.0.html)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![JitPack](https://img.shields.io/jitpack/v/github/xizzhu/Logger.svg)](https://jitpack.io/#xizzhu/Logger)
+[![JitPack](https://img.shields.io/jitpack/v/github/xizzhu/Logger.svg)](https://jitpack.io/#me.xizzhu/logger)
 
 Yet another simple logger for your awesome Android application, written in Kotlin.
 
