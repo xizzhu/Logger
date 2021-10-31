@@ -24,7 +24,7 @@ object Configurations {
 
 object Versions {
     object Logger {
-        const val code = 601
+        const val code = 700
         const val name = "${code / 10000}.${(code % 10000) / 100}.${code % 100}"
     }
 
