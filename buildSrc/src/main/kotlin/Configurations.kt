@@ -36,7 +36,7 @@ object Versions {
         const val classpath = "7.0.3"
         const val buildTools = "31.0.0"
         const val compile = 31
-        const val min = 21
+        const val min = 19
         const val target = 31
     }
 

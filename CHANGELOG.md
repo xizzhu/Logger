@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+#### 0.7.0
+- Changes:
+  - Lower Minimum SDK Version to 19 (Android 4.4)
+
 #### 0.6.1
 - Changes:
   - Allow app to provide FirebaseCrashlytics instance
